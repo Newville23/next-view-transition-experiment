@@ -1,57 +1,157 @@
 import Image from "next/image";
 
+const books = [
+  {
+    id: "https://www.safaribooksonline.com/api/v1/book/9781098166298/",
+    archive_id: "9781098166298",
+    ourn: "urn:orm:book:9781098166298",
+    isbn: "9781098166304",
+    last_modified_time: "2024-12-12T15:56:30.660Z",
+    issued: "2024-12-04T00:00:00Z",
+    format: "book",
+    content_format: "book",
+    authors: ["Chip Huyen"],
+    publishers: ["O'Reilly Media, Inc."],
+    academic_excluded: false,
+    language: "en",
+    title: "AI Engineering",
+    description:
+      "<span><div><p>Recent breakthroughs in AI have not only increased demand for AI products, they've also lowered the barriers to entry for those who want to build AI products. The model-as-a-service approach has transformed AI from an esoteric discipline into a powerful development tool that anyone can use. Everyone, including those with minimal or no prior AI experience, can now leverage AI models to build applications. In this book, author Chip Huyen discusses AI engineering: the process of building applications with readily available foundation models.  \n</p><p>\nThe book starts with an overview of AI engineering, explaining how it differs from traditional ML engineering and discussing the new AI stack. The more AI is used, the more opportunities there are for catastrophic failures, and therefore, the more important evaluation becomes. This book discusses different approaches to evaluating open-ended models, including the rapidly growing AI-as-a-judge approach.\n</p><p>\nAI application developers will discover how to navigate the AI landscape, including models, datasets, evaluation benchmarks, and the seemingly infinite number of use cases and application patterns. You'll learn a framework for developing an AI application, starting with simple techniques and progressing toward more sophisticated methods, and discover how to efficiently deploy these applications.\n</p><ul><li>Understand what AI engineering is and how it differs from traditional machine learning engineering \n</li><li>Learn the process for developing an AI application, the challenges at each step, and approaches to address them \n</li><li>Explore various model adaptation techniques, including prompt engineering, RAG, fine-tuning, agents, and dataset engineering, and understand how and why they work\n</li><li>Examine the bottlenecks for latency and cost when serving foundation models and learn how to overcome them\n</li><li>Choose the right model, dataset, evaluation benchmarks, and metrics for your needs\n</li></ul><p>Chip Huyen works to accelerate data analytics on GPUs at Voltron Data. Previously, she was with Snorkel AI and NVIDIA, founded an AI infrastructure startup, and taught Machine Learning Systems Design at Stanford. She's the author of the book Designing Machine Learning Systems, an Amazon bestseller in AI.\n</p><p><em>AI Engineering</em> builds upon and is complementary to <em>Designing Machine Learning Systems (O'Reilly)</em>.</p></div></span>",
+    url: "https://learning.oreilly.com/api/v1/book/9781098166298/",
+    web_url: "/library/view/ai-engineering/9781098166298/",
+    source: "application/epub+zip",
+    content_type: "book",
+    virtual_pages: 828,
+    duration_seconds: -1,
+    has_assessment: false,
+    timestamp: "2024-12-12T15:59:00.704Z",
+    average_rating: 4682,
+    number_of_followers: 0,
+    number_of_items: 0,
+    number_of_reviews: 22,
+    popularity: 999988021,
+    report_score: 103000,
+    cover_url: "https://learning.oreilly.com/library/cover/9781098166298/",
+    date_added: "2024-12-12T15:55:36.242Z",
+    topics: ["c44cbd83-0306-49a2-be7f-ef48e5757b6f"],
+    topics_payload: [
+      {
+        uuid: "c44cbd83-0306-49a2-be7f-ef48e5757b6f",
+        slug: "artificial-intelligence-ai",
+        name: "Artificial Intelligence (AI)",
+        score: null,
+      },
+    ],
+    minutes_required: 952.2,
+  },
+  {
+    id: "https://www.safaribooksonline.com/api/v2/book/9781098150952/",
+    archive_id: "9781098150952",
+    ourn: "urn:orm:book:9781098150952",
+    isbn: "9781098150969",
+    last_modified_time: "2025-03-13T16:10:16.284Z",
+    issued: "2024-09-11T00:00:00Z",
+    format: "book",
+    content_format: "book",
+    authors: ["Jay Alammar", "Maarten Grootendorst"],
+    publishers: ["O'Reilly Media, Inc."],
+    academic_excluded: false,
+    language: "en",
+    title: "Hands-On Large Language Models",
+    description:
+      "<span><div><p>AI has acquired startling new language capabilities in just the past few years. Driven by rapid advances in deep learning, language AI systems are able to write and understand text better than ever before. This trend is enabling new features, products, and entire industries. Through this book's visually educational nature, readers will learn practical tools and concepts they need to use these capabilities today.\n</p><p>You'll understand how to use pretrained large language models for use cases like copywriting and summarization; create semantic search systems that go beyond keyword matching; and use existing libraries and pretrained models for text classification, search, and clusterings. \n</p><p>This book also helps you:\n</p><ul><li>Understand the architecture of Transformer language models that excel at text generation and representation</li><li>Build advanced LLM pipelines to cluster text documents and explore the topics they cover</li><li>Build semantic search engines that go beyond keyword search, using methods like dense retrieval and rerankers</li><li>Explore how generative models can be used, from prompt engineering all the way to retrieval-augmented generation</li><li>Gain a deeper understanding of how to train LLMs and optimize them for specific applications using generative model fine-tuning, contrastive fine-tuning, and in-context learning</li></ul></div></span>",
+    url: "https://learning.oreilly.com/api/v1/book/9781098150952/",
+    web_url: "/library/view/hands-on-large-language/9781098150952/",
+    source: "application/epub+zip",
+    content_type: "book",
+    virtual_pages: 547,
+    duration_seconds: -1,
+    has_assessment: false,
+    timestamp: "2025-03-13T16:11:48.380Z",
+    average_rating: 4652,
+    number_of_followers: 0,
+    number_of_items: 0,
+    number_of_reviews: 23,
+    popularity: 999952083,
+    report_score: 107000,
+    cover_url: "https://learning.oreilly.com/library/cover/9781098150952/",
+    date_added: "2024-09-11T16:50:25.418Z",
+    topics: ["20b912db-3785-4933-9d55-c8e2561b0583"],
+    topics_payload: [
+      {
+        uuid: "20b912db-3785-4933-9d55-c8e2561b0583",
+        slug: "large-language-models-llms",
+        name: "Large Language Models (LLMs)",
+        score: null,
+      },
+    ],
+    minutes_required: 629.05,
+  },
+  {
+    id: "https://www.safaribooksonline.com/api/v1/book/9781098119058/",
+    archive_id: "9781098119058",
+    ourn: "urn:orm:book:9781098119058",
+    isbn: "9781098119065",
+    last_modified_time: "2025-03-11T14:50:50.153Z",
+    issued: "2025-12-25T00:00:00Z",
+    format: "book",
+    content_format: "book",
+    authors: ["Martin Kleppmann", "Chris Riccomini"],
+    publishers: ["O'Reilly Media, Inc."],
+    academic_excluded: false,
+    language: "en",
+    title: "Designing Data-Intensive Applications, 2nd Edition",
+    description:
+      "<span><div><p>Data is at the center of many challenges in system design today. Difficult issues such as scalability, consistency, reliability, efficiency, and maintainability need to be resolved. In addition, there's an overwhelming variety of tools and analytical systems, including relational databases, NoSQL datastores, plus data warehouses and data lakes. What are the right choices for your application? How do you make sense of all these buzzwords?\n</p><p>\nIn this second edition, authors Martin Kleppmann and Chris Riccomini build on the foundation laid in the acclaimed first edition, integrating new technologies and emerging trends. You'll be guided through the maze of decisions and trade-offs involved in building a modern data system, from choosing the right tools like Spark and Flink to understanding the intricacies of data laws like the GDPR.\n</p><p></p><ul><li>Peer under the hood of the systems you already use, and learn to use them more effectively\n</li><li>Make informed decisions by identifying the strengths and weaknesses of different tools\n</li><li>Navigate the trade-offs around consistency, scalability, fault tolerance, and complexity\n</li><li>Understand the distributed systems research upon which modern databases are built\n</li><li>Peek behind the scenes of major online services, and learn from their architectures\n</li></ul></div></span>",
+    url: "https://learning.oreilly.com/api/v1/book/9781098119058/",
+    web_url:
+      "/library/view/designing-data-intensive-applications/9781098119058/",
+    source: "application/epub+zip",
+    content_type: "book",
+    virtual_pages: 446,
+    duration_seconds: -1,
+    has_assessment: false,
+    timestamp: "2025-03-11T14:52:34.728Z",
+    average_rating: 4600,
+    number_of_followers: 0,
+    number_of_items: 0,
+    number_of_reviews: 10,
+    popularity: 999916147,
+    report_score: 46000,
+    cover_url: "https://learning.oreilly.com/library/cover/9781098119058/",
+    date_added: "2025-03-11T14:50:22.009Z",
+    topics: ["0ec314b3-3c55-4522-a7d4-2fd9254ce438"],
+    topics_payload: [
+      {
+        uuid: "0ec314b3-3c55-4522-a7d4-2fd9254ce438",
+        slug: "data-engineering",
+        name: "Data Engineering",
+        score: null,
+      },
+    ],
+    minutes_required: 512.9,
+  },
+];
+
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className="min-h-screen mt-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="max-w-3/4 mx-auto sm:px-6 lg:px-8 mb-4 ">
+        <ul className="grid grid-cols-1 gap-1 sm:grid-cols-3 text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+          {books.map((book) => (
+            <li key={book.id} className="">
+              <Image
+                aria-hidden
+                src={`${book.cover_url}/250w`}
+                alt={book.title}
+                width={153}
+                height={230}
+              />
+            </li>
+          ))}
+        </ul>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
+      <footer className="flex gap-[24px] flex-wrap items-center justify-center">
         <a
           className="flex items-center gap-2 hover:underline hover:underline-offset-4"
           href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
