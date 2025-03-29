@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Suspense } from "react";
 export default function BookCover({
   url,
   title,
@@ -14,14 +15,20 @@ export default function BookCover({
   };
   return (
     <div className={`${imgSize[size]} relative`}>
-      <Image
-        src={`${url}150w`}
-        fill
-        alt={title}
-        className="object-cover rounded-r-lg flex-1"
-        blurDataURL={url}
-        placeholder="blur"
-      />
+      <Suspense
+        fallback={
+          <div className="${imgSize[size]} bg-green-400 animate-pulse">
+            Loading...
+          </div>
+        }
+      >
+        <Image
+          src={`${url}50w`}
+          fill
+          alt={title}
+          className="object-cover rounded-r-lg flex-1"
+        />
+      </Suspense>
     </div>
   );
 }
