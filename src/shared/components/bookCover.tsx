@@ -1,22 +1,27 @@
 import Image from "next/image";
-import { unstable_ViewTransition as ViewTransition } from "react";
 export default function BookCover({
   url,
   title,
+  size = "sm",
 }: {
   url: string;
   title: string;
+  size?: "sm" | "md";
 }) {
+  const imgSize = {
+    sm: "h-40 w-30",
+    md: "h-80 w-60",
+  };
   return (
-    <ViewTransition name={`cover-${url}`}>
-    <div className="mr-4 h-80 w-60 relative">
+    <div className={`${imgSize[size]} relative`}>
       <Image
-        src={`${url}320w`}
+        src={`${url}150w`}
         fill
         alt={title}
-        className="object-cover transition-transform filter hover:scale-105 overflow-hidden rounded-r-lg flex-1"
-        />
+        className="object-cover rounded-r-lg flex-1"
+        blurDataURL={url}
+        placeholder="blur"
+      />
     </div>
-    </ViewTransition>
   );
 }

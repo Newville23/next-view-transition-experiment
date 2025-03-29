@@ -1,10 +1,10 @@
 import Image from "next/image";
 export default function Footer() {
   return (
-    <footer className="flex gap-[24px] flex-wrap items-center justify-center">
+    <footer className="flex gap-[24px] flex-wrap items-center justify-center text-white/30">
       <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4 hover:text-green-400"
+        href="https://motion.dev/blog/reacts-experimental-view-transition-api"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -18,8 +18,8 @@ export default function Footer() {
         Learn
       </a>
       <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4 hover:text-green-400"
+        href="https://github.com/vercel/next-view-transition-example/tree/main"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -30,11 +30,11 @@ export default function Footer() {
           width={16}
           height={16}
         />
-        Examples
+        More Examples
       </a>
       <a
-        className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-        href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+        className="flex items-center gap-2 hover:underline hover:underline-offset-4 hover:text-green-400"
+        href="https://nextjs.org/docs/app/api-reference/config/next-config-js/viewTransition"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -45,7 +45,7 @@ export default function Footer() {
           width={16}
           height={16}
         />
-        Go to nextjs.org →
+        Nextjs ViewTransition →
       </a>
     </footer>
   );

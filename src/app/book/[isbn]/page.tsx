@@ -15,9 +15,13 @@ export default async function BookDetail({
     <div className="py-10">
       <Container>
         <div className="flex justify-center">
-          <BookCover url={`${book.cover_url}320w`} title={book.title} />
-          <div className="metadata basis-xl ml-4">
-            <h2 className="text-4xl mb-8">{book.title}</h2>
+          <ViewTransition name={`cover-${book.isbn}`}>
+            <BookCover url={`${book.cover_url}320w`} title={book.title} size="md" />
+          </ViewTransition>
+          <div className="metadata flex-3 ml-4">
+            <ViewTransition name={`title-${book.isbn}`}>
+              <h2 className="text-4xl mb-8">{book.title}</h2>
+            </ViewTransition>
             <ViewTransition name={`authors-${book.isbn}`}>
               <p className="authors">
                 by{" "}
