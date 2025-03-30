@@ -9,7 +9,6 @@ export default async function DetailScreen({
   book: (typeof BOOKS)[number];
 }) {
   return (
-    <ViewTransition>
       <div className="py-10">
         <Container>
           <div className="flex justify-center">
@@ -50,6 +49,5 @@ export default async function DetailScreen({
           </div>
         </Container>
       </div>
-    </ViewTransition>
   );
 }

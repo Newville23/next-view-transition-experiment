@@ -6,7 +6,6 @@ import { unstable_ViewTransition as ViewTransition } from "react";
 
 export default function HomeScreen() {
   return (
-    <ViewTransition>
       <div className="font-[family-name:var(--font-geist-sans)] mb-10">
         <Container>
           <h2 className="text-3xl font-medium text-green-400 my-10">
@@ -45,6 +44,5 @@ export default function HomeScreen() {
           </ul>
         </Container>
       </div>
-    </ViewTransition>
   );
 }

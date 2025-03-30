@@ -17,9 +17,9 @@ export default function BookCover({
     <div className={`${imgSize[size]} relative`}>
       <Suspense
         fallback={
-          <div className="${imgSize[size]} bg-green-400 animate-pulse">
-            Loading...
-          </div>
+          <div
+            className={`${imgSize[size]} bg-green-400/10 animate-pulse rounded-r-lg`}
+          ></div>
         }
       >
         <Image
@@ -27,6 +27,7 @@ export default function BookCover({
           fill
           alt={title}
           className="object-cover rounded-r-lg flex-1"
+          priority
         />
       </Suspense>
     </div>
