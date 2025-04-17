@@ -9,10 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^10.0.6",
+    "@react-three/fiber": "^9.1.2",
     "@vercel/analytics": "^1.5.0",
     "next": "15.2.3",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "three": "^0.175.0",
+    "three-custom-shader-material": "^6.3.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
