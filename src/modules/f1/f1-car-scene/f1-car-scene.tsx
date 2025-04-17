@@ -134,7 +134,7 @@ export function AnimatedCar({ children }: AnimatedCarProps) {
   const params = useParams()
   const hasTeam = !!params?.team
 
-  const ref = useRef<Group>(null!)
+  const ref = useRef<THREE.Group>(null!)
 
   const frontPos = useMemo(() => new THREE.Vector3(0, -0.15, -1.5), [])
   const defaultPos = useMemo(() => new THREE.Vector3(-0.01, -0.15, 0), [])
@@ -143,21 +143,24 @@ export function AnimatedCar({ children }: AnimatedCarProps) {
   useFrame(() => {
     if (!ref.current) return
     const target = hasTeam ? frontPos : defaultPos
-    ref.current.position.lerp(v.copy(target), 0.05)
+    // Increase the lerp factor for a faster move
+    ref.current.position.lerp(v.copy(target), 0.2) // ← was 0.05
   })
 
   return <group ref={ref}>{children}</group>
 }
 
-export default function F1CarScene(){
-  const { team } = useParams();
-  const [degraded, degrade] = useState(false);
 
+export default function F1CarScene(){
+
+  const [degraded, degrade] = useState(false);
+  const params = useParams()
+  const hasTeam = !!params?.team
   
   return(
     <Canvas
     shadows
-    camera={{ position: [25, 1.5, 15], fov: 15 }}
+    camera={{ position: hasTeam ? [4, 1.5, 10] : [25, 1.5, 15], fov: 15 }}
     gl={{ preserveDrawingBuffer: true }}
   >
     <spotLight
@@ -170,11 +173,10 @@ export default function F1CarScene(){
     />
     <ambientLight intensity={0.5} />
 
-<AnimatedCar>
-
-    <F1Car
-      scale={1.2}
-      rotation={[0, Math.PI / 5, 0]}
+    <AnimatedCar>
+      <F1Car
+        scale={1.2}
+        rotation={[0, Math.PI / 5, 0]}
       />
       </AnimatedCar>
     <AccumulativeShadows
