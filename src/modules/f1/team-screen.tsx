@@ -7,7 +7,8 @@ import { unstable_ViewTransition as ViewTransition } from 'react';
 
 export default function TeamScreen({ team }: { team: F1Team }) {
   return (
-    <div className="w-full absolute top-0 bottom-0 z-10">
+    <ViewTransition name="team-details">
+    <div className="w-full absolute top-0 bottom-0 z-10" style={{ viewTransitionName: 'team-details' }}>
       <Container>
         <Link
           href="/f1"
@@ -79,5 +80,6 @@ export default function TeamScreen({ team }: { team: F1Team }) {
         </div>
       </Container>
     </div>
+    </ViewTransition>
   );
 }

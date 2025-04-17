@@ -108,7 +108,7 @@ function CameraRig({ v = new THREE.Vector3() }) {
   const params = useParams()
   const hasTeam = !!params?.team
 
-  const frontPos = useMemo(() => new THREE.Vector3(4, 1.5, 10), [])
+  const frontPos = useMemo(() => new THREE.Vector3(4, 1.5, 7), [])
 
   return useFrame((state) => {
     const t = state.clock.getElapsedTime()
@@ -175,8 +175,8 @@ export default function F1CarScene(){
 
     <AnimatedCar>
       <F1Car
-        scale={1.2}
-        rotation={[0, Math.PI / 5, 0]}
+      scale={1.2}
+      rotation={[0, Math.PI / 5, 0]}
       />
       </AnimatedCar>
     <AccumulativeShadows

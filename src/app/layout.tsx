@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./transitions.css"
 import Header from "@/shared/components/header";
 import Footer from "@/shared/components/footer";
 

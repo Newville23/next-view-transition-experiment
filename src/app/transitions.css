@@ -1,0 +1,117 @@
+@keyframes move-out {
+  from {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+}
+
+@keyframes move-in {
+  from {
+    transform: translateY(20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-and-move-out {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+}
+
+@keyframes fade-and-move-in {
+  from {
+    opacity: 0;
+    transform: translateX(-10%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes move-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@keyframes move-out-to-bottom {
+  from {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+}
+
+@keyframes move-in-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes move-out-to-left {
+  from {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+}
+
+/* View Transitions */
+
+:root {
+  --easing-function: cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+::view-transition-old(teams) {
+  animation: 0.25s var(--easing-function) both move-out;
+}
+
+::view-transition-new(teams) {
+  animation: 0.25s var(--easing-function) both move-in;
+}
+
+::view-transition-old(home-description) {
+  animation: 1s var(--easing-function) both fade-and-move-out;
+}
+
+::view-transition-new(home-description) {
+  animation: 1s var(--easing-function) both fade-and-move-in;
+}
+
+::view-transition-old(team-details) {
+  animation: 1s var(--easing-function) both move-out-to-bottom;
+}
+
+::view-transition-new(team-details) {
+  animation: 1s var(--easing-function) both move-in-from-bottom;
+}

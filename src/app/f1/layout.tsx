@@ -1,3 +1,4 @@
+import { unstable_ViewTransition as ViewTransition } from 'react'
 import F1CarScene from "@/modules/f1/f1-car-scene/f1-car-scene";
 import Container from "@/shared/components/container";
 
@@ -55,7 +56,9 @@ export default async function F1Layout({
         <div className="h-screen w-full">
           <div className="h-full relative">
             <F1CarScene />
-            {children}
+            <ViewTransition>
+              {children}
+            </ViewTransition>
             <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
           </div>
         </div>

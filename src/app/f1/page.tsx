@@ -1,7 +1,5 @@
-import Overlay from '@/modules/f1/components/overlay';
+import F1HomeScreen from "@/modules/f1/home-screen";
 
 export default function F1CarsPage() {
-  return (
-    <Overlay/>
-  );
-} 
+  return <F1HomeScreen />;
+}
