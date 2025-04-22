@@ -12,7 +12,7 @@ export default function TeamScreen({ team }: { team: F1Team }) {
       <Container>
         <Link
           href="/f1"
-          className="my-6 text-white hover:underline flex items-center"
+          className="my-6 text-white hover:underline flex items-center font-exo2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -33,16 +33,15 @@ export default function TeamScreen({ team }: { team: F1Team }) {
           <div className="w-full md:w-1/2">
             <ViewTransition name={`title-${team.id}`}>
               <h1
-                className="text-4xl font-bold mb-2 uppercase tracking-wider"
-                style={{ color: team.color }}
+                className="text-4xl font-bold mb-6 tracking-wider font-orbitron"
               >
                 {team.name}
               </h1>
             </ViewTransition>
 
             <div
-              className="bg-black p-6 border-l-4"
-              style={{ borderLeftColor: team.color }}
+              className="z-50 backdrop-blur-2xl bg-gradient-to-b from-black/50 to-black/95 shadow-lg p-6 border-r-2 border-t-2 rounded-tr-2xl rounded-bl-2xl"
+              style={{ borderColor: team.color }}
             >
               <div className="grid grid-cols-2 gap-4 mb-6 text-gray-400">
                 <div>
@@ -50,16 +49,13 @@ export default function TeamScreen({ team }: { team: F1Team }) {
                   <p className="text-xl font-bold">{team.founded}</p>
                 </div>
                 <div>
-                  <h3 className="text-xs uppercase tracking-widest ">
+                  <h3 className="text-xs uppercase tracking-widest">
                     Championships
                   </h3>
                   <p className="text-xl font-bold">{team.championships}</p>
                 </div>
               </div>
 
-              <h2 className="text-xl font-semibold mb-4 uppercase tracking-wider">
-                Team Profile
-              </h2>
               <p className="mb-4 text-gray-300">{team.description}</p>
 
               <div className="flex items-center mt-6">

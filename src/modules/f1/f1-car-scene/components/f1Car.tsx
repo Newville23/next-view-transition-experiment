@@ -1,8 +1,8 @@
 'use client';
 import { useLayoutEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { useTeamStore } from "@/shared/stores/teams";
 import { Mesh } from 'three';
-
 interface F1CarProps {
   scale?: number;
   position?: [number, number, number];
@@ -14,7 +14,9 @@ export default function F1Car({
   position = [0, 0, 0],
   rotation
 }: F1CarProps) {
-  const { nodes, materials, scene } = useGLTF('/f1_car.glb');
+  const hoveredTeam = useTeamStore((state) => state.hoveredTeam);
+  const modelURL= `/models/${hoveredTeam}.glb`;
+  const { nodes, materials, scene } = useGLTF(modelURL);
 
   // Clone the scene to avoid modifying the original
   const clonedScene = scene.clone();

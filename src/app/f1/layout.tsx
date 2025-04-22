@@ -21,8 +21,8 @@ export default async function F1Layout({
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <span className="text-red-600 font-bold text-2xl mr-2">F1</span>
-                <span className="text-white font-bold text-xl font-exo2">
-                  3D Experience
+                <span className="text-white font-bold text-xl font-orbitron">
+                  VT Experience
                 </span>
               </div>
             </div>
@@ -37,7 +37,7 @@ export default async function F1Layout({
             <ViewTransition>
               {children}
             </ViewTransition>
-            <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
           </div>
         </div>
       </main>
