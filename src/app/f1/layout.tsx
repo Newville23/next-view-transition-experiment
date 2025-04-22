@@ -1,9 +1,7 @@
 import { unstable_ViewTransition as ViewTransition } from 'react'
 import F1CarScene from "@/modules/f1/f1-car-scene/f1-car-scene";
 import Container from "@/shared/components/container";
-
 import type { Metadata } from "next";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Formula 1 - 3D Experience",
@@ -19,40 +17,20 @@ export default async function F1Layout({
     <div className="min-h-screen bg-black text-black">
       <header className="bg-black py-4 border-b border-gray-800">
         <Container>
-          <div className="mx-auto">
+          <div className="mx-auto font-exo2">
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <span className="text-red-600 font-bold text-2xl mr-2">F1</span>
-                <span className="text-white font-bold text-xl">
+                <span className="text-white font-bold text-xl font-exo2">
                   3D Experience
                 </span>
               </div>
-              <nav>
-                <ul className="flex space-x-6">
-                  <li>
-                    <Link
-                      href="/"
-                      className="text-gray-400 hover:text-white transition-colors"
-                    >
-                      Home
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href="f1/team/mercedes"
-                      className="text-white font-medium"
-                    >
-                      Teams
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
             </div>
           </div>
         </Container>
       </header>
       {/* { Main content } */}
-      <main>
+      <main className='font-exo2'>
         <div className="h-screen w-full">
           <div className="h-full relative">
             <F1CarScene />

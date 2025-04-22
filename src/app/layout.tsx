@@ -1,10 +1,20 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react"
-import { Geist, Geist_Mono } from "next/font/google";
+import { Exo_2, Geist, Geist_Mono, Orbitron } from "next/font/google";
 import "./globals.css";
 import "./transitions.css"
 import Header from "@/shared/components/header";
 import Footer from "@/shared/components/footer";
+
+const orbitron = Orbitron({
+  subsets: ['latin'],
+  variable: '--font-orbitron',
+})
+
+const exo2 = Exo_2({
+  subsets: ['latin'],
+  variable: '--font-exo2',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,7 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistMono.variable} ${geistSans.variable} ${orbitron.variable} ${exo2.variable} antialiased`}
       >
         <Header />
         <main>{children}</main>
