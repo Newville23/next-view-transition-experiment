@@ -43,9 +43,9 @@ export default async function F1Layout({
       </main>
       <footer className="bg-black py-6 border-t border-gray-800">
         <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
-          <p>
+        <p>
             © {new Date().getFullYear()} Formula 1 3D Experience. Not affiliated
-            with Formula 1.
+            with Formula 1. Models designed by Redgrund is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
           </p>
         </div>
       </footer>
