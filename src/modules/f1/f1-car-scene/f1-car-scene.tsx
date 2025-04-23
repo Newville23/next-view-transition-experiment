@@ -14,7 +14,7 @@ import AnimatedCar from "./components/animatedCar";
 
 
 export default function F1CarScene() {
-  const [degraded, degrade] = useState(false);
+  const [degraded] = useState(false);
   const params = useParams();
   const hasTeam = !!params?.team;
   return (

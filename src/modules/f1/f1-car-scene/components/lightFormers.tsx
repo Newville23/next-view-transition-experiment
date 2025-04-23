@@ -5,17 +5,21 @@ import CustomShaderMaterial from "three-custom-shader-material";
 import * as THREE from "three";
 
 export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
-  const group = useRef(null);
-  const materialRef = useRef<any>(null!);
+  const group = useRef<THREE.Group>(null!);
 
+  // Assume it's a ShaderMaterial with a uTime uniform
+  const materialRef = useRef<THREE.ShaderMaterial>(null!);
+
+  // Move group along z-axis
   useFrame((_, delta) => {
     if (!group.current) return;
     group.current.position.z += delta * 10;
     if (group.current.position.z > 20) group.current.position.z = -60;
   });
 
+  // Update shader time
   useFrame((state) => {
-    if (materialRef.current) {
+    if (materialRef.current?.uniforms?.uTime) {
       materialRef.current.uniforms.uTime.value = state.clock.elapsedTime;
     }
   });
@@ -80,6 +84,7 @@ export default function Lightformers({ positions = [2, 0, 2, 0, 2, 0, 2, 0] }) {
       <mesh scale={100}>
         <sphereGeometry args={[1, 64, 64]} />
         <CustomShaderMaterial
+        // @ts-expect-error: ShaderMaterial does not have 'update', but works with CustomShaderMaterial
           ref={materialRef}
           baseMaterial={THREE.MeshStandardMaterial}
           side={THREE.BackSide}
