@@ -1,4 +1,4 @@
-import { unstable_ViewTransition as ViewTransition } from 'react'
+import { unstable_ViewTransition as ViewTransition } from "react";
 import F1CarScene from "@/modules/f1/f1-car-scene/f1-car-scene";
 import Container from "@/shared/components/container";
 import type { Metadata } from "next";
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function F1Layout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -30,14 +30,14 @@ export default async function F1Layout({
         </Container>
       </header>
       {/* { Main content } */}
-      <main className='font-exo2'>
+      <main className="font-exo2">
         <div className="h-screen w-full">
           <div className="h-full relative">
             <F1CarScene />
             <ViewTransition>
               {children}
             </ViewTransition>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           </div>
         </div>
       </main>

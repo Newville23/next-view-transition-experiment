@@ -2,6 +2,7 @@
 
 import Container from "@/shared/components/container";
 import { F1Team } from "@/shared/utils/f1-teams";
+import Image from "next/image";
 import Link from "next/link";
 import { unstable_ViewTransition as ViewTransition } from 'react';
 
@@ -60,14 +61,12 @@ export default function TeamScreen({ team }: { team: F1Team }) {
 
               <div className="flex items-center mt-6">
                 <div className="flex">
-                  <div
-                    className="w-8 h-8 rounded-full mr-2"
-                    style={{ backgroundColor: team.color }}
-                  ></div>
-                  <div
-                    className="w-8 h-8 rounded-full"
-                    style={{ backgroundColor: team.secondaryColor }}
-                  ></div>
+                  {team.drivers.map((driver) =>  (<div
+                    className="w-12 h-12 mr-4 relative"
+                    key={driver}
+                  >
+                    <Image src={`/helmets/${driver}.avif`} fill className="object-cover h-full w-full" alt={driver}/>
+                  </div>))}
                 </div>
                 <span className="ml-3 text-sm text-gray-400">Team Drivers</span>
               </div>

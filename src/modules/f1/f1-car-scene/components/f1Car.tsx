@@ -1,21 +1,21 @@
 'use client';
+import { Mesh } from 'three';
 import { useLayoutEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { useTeamStore } from "@/shared/stores/teams";
-import { Mesh } from 'three';
+import { F1_TEAMS } from "@/shared/utils/f1-teams";
 interface F1CarProps {
-  scale?: number;
   position?: [number, number, number];
   rotation?: [number, number, number];
 }
 
 export default function F1Car({ 
-  scale = 1, 
   position = [0, 0, 0],
   rotation
 }: F1CarProps) {
   const hoveredTeam = useTeamStore((state) => state.hoveredTeam);
   const modelURL= `/models/${hoveredTeam}.glb`;
+    const modelScale = F1_TEAMS.find((team) => team.slug === hoveredTeam)?.scale || 1;
   const { nodes, materials, scene } = useGLTF(modelURL);
 
   // Clone the scene to avoid modifying the original
@@ -26,9 +26,11 @@ export default function F1Car({
   },[nodes, materials])
 
   return (
-      <primitive object={clonedScene} position={position} rotation={rotation} scale={scale}/>
+      <primitive object={clonedScene} position={position} rotation={rotation} scale={modelScale}/>
   );
 }
 
 // Preload the model
-useGLTF.preload('/f1_car.glb'); 
+useGLTF.preload('/models/ferrari.glb'); 
+useGLTF.preload('/models/red-bull-racing.glb'); 
+useGLTF.preload('/models/mercedes.glb'); 
