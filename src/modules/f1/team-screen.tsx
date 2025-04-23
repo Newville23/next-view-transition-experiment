@@ -13,7 +13,7 @@ export default function TeamScreen({ team }: { team: F1Team }) {
       <Container>
         <Link
           href="/f1"
-          className="my-6 text-white hover:underline flex items-center font-exo2"
+          className="my-6 px-6 py-1 text-white transition-all hover:text-black hover:bg-white inline-flex items-center font-exo2 border border-white rounded-3xl"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -59,8 +59,9 @@ export default function TeamScreen({ team }: { team: F1Team }) {
 
               <p className="mb-4 text-gray-300">{team.description}</p>
 
-              <div className="flex items-center mt-6">
-                <div className="flex">
+              <div className="mt-6">
+                <span className="text-sm text-gray-400">Team Drivers</span>
+                <div className="flex items-center">
                   {team.drivers.map((driver) =>  (<div
                     className="w-12 h-12 mr-4 relative"
                     key={driver}
@@ -68,7 +69,7 @@ export default function TeamScreen({ team }: { team: F1Team }) {
                     <Image src={`/helmets/${driver}.avif`} fill className="object-cover h-full w-full" alt={driver}/>
                   </div>))}
                 </div>
-                <span className="ml-3 text-sm text-gray-400">Team Drivers</span>
+               
               </div>
             </div>
           </div>

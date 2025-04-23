@@ -19,11 +19,11 @@ export default function CameraRig() {
     const targetPos = hasTeam ? frontPosition : defaultPosition;
     if (hasTeam) {
       // Snap to front-facing position smoothly
-      state.camera.position.lerp(v.current.copy(targetPos), 0.05);
+      state.camera.position.lerp(v.current.copy(targetPos), 0.08);
     } else {
       // Animated orbit around the car
       v.current.set(Math.sin(t / 5), 1.5, 12 + Math.cos(t / 5) / 2);
-      state.camera.position.lerp(v.current, 0.05);
+      state.camera.position.lerp(v.current, 0.08);
     }
 
     state.camera.lookAt(0, 0, 0);

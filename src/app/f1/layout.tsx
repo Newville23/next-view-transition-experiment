@@ -2,6 +2,7 @@ import { unstable_ViewTransition as ViewTransition } from "react";
 import F1CarScene from "@/modules/f1/f1-car-scene/f1-car-scene";
 import Container from "@/shared/components/container";
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Formula 1 - 3D Experience",
@@ -45,7 +46,7 @@ export default async function F1Layout({
         <div className="container mx-auto px-4 text-center text-gray-500 text-sm">
         <p>
             © {new Date().getFullYear()} Formula 1 3D Experience. Not affiliated
-            with Formula 1. Models designed by Redgrund is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+            with Formula 1. Models designed by Redgrund is licensed under <Link href={'https://creativecommons.org/licenses/by/4.0/'}> Creative Commons Attribution</Link>.
           </p>
         </div>
       </footer>
